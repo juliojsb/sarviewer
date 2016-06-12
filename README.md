@@ -13,9 +13,9 @@ Useful to retrieve and analyze data during stress tests.
         # RHEL & based
         yum install sysstat gnuplot
 
-* Clone this repo or download it (ZIP format)
-
-* Launch the data_collector.sh script. Specify the number of samples and interval to take each sample. Notice that whenever you want you can cancel the collector with Ctrl+C, interrumpting the collection of data. If it is cancelled you will need to launch the script plotter.sh manually.
+* Clone this repo or download it (ZIP format). Note that the the files contained in data/ and graphs/ folder are only for sample purposes.
+* Give execution permissions to the *.sh scripts on this repo
+* Launch the data_collector.sh script. Specify the number of samples and interval to take each sample. Notice that whenever you want you can cancel the collector with Ctrl+C, interrumpting the collection of data. If it is cancelled you will need to launch the script plotter.sh manually. The data and graphs generated will overwrite the samples given in this repo.
 
 * Once the script has finished the data collection or you have cancelled it (and subsequently launched plotter.sh) you can analyze the resource usage in the graphs (PNG format) that have been generated in graphs/ folder of this repo.
 
