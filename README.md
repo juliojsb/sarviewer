@@ -24,9 +24,17 @@ Useful to retrieve and analyze data during stress tests.
 Some samples of graphs generated.
 
 * RAM
- 
+
+![Alt text](/graphs/ram.png?raw=true "RAM usage graph")
+
 * CPU
- 
+
+![Alt text](/graphs/cpu.png?raw=true "CPU usage graph")
+
 * Load Average
 
+![Alt text](/graphs/loadaverage.png?raw=true "Load average")
+
 * Processes
+
+![Alt text](/graphs/proc.png?raw=true "Processes created per second")
