@@ -6,7 +6,7 @@ Useful to retrieve and analyze data during stress tests.
 
 #### Usage
 
-* Install sysstat and gnuplot in your system using your
+* Install sysstat and gnuplot in your system using your package manager:
 
         # Debian & based
         apt-get install sysstat gnuplot
