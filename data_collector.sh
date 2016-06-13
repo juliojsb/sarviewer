@@ -4,7 +4,10 @@
 # Author        :Julio Sanz
 # Website       :www.elarraydejota.com
 # Email         :juliojosesb@gmail.com
-# Description   :Script to collect data using sar and put in in data/ folder of this repository
+# Description   :Script to collect resources data using sar and put it in data/ folder of this repository.
+#                Note this script is intended to collect data in real time (useful for stress tests) but
+#                not to analyse the overall performance of a machine during a long time frame.
+#                If you want to check historic data of the server, better use system_data_reader.sh script.
 # Dependencies  :sar,gnuplot
 # Usage         :1)Give executable permissions to script -> chmod +x data_collector.sh
 #                2)Execute script -> ./data_collector.sh
