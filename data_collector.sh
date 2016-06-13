@@ -24,17 +24,17 @@ export LC_TIME="POSIX"
 
 sar_collectors(){
 	# CPU
-	sar -u $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/cpu.dat &
+	sar -u $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/cpu.dat &
 	# RAM
-	sar -r $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/ram.dat &
+	sar -r $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
-	sar -S $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/swap.dat &
+	sar -S $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/swap.dat &
 	# Load average
-	sar -q $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/loadaverage.dat &
+	sar -q $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/loadaverage.dat &
 	# IO transfer
-	sar -b $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/iotransfer.dat &
+	sar -b $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &
 	# Process/context switches
-	sar -w $sample_interval $number_of_samples | grep -v Linux | grep -v Average > data/proc.dat &
+	sar -w $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
 }
 
 how_to_use(){
