@@ -27,7 +27,7 @@ export LC_TIME="POSIX"
 
 sar_collectors(){
 	# CPU
-	sar -u $sample_interval $number_of_samples | grep -v -E "[CPU]|^$" > data/cpu.dat &
+	sar -u $sample_interval $number_of_samples | grep -v -E "[CPU]|Average|^$" > data/cpu.dat &
 	# RAM
 	sar -r $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
