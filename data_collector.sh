@@ -8,7 +8,7 @@
 #                Note this script is intended to collect data in real time (useful for stress tests) but
 #                not to analyse the overall performance of a machine during a long time frame.
 #                If you want to check historic data of the server, better use system_data_reader.sh script.
-# Dependencies  :sar,gnuplot
+# Dependencies  :sysstat,gnuplot
 # Usage         :1)Give executable permissions to script -> chmod +x data_collector.sh
 #                2)Execute script -> ./data_collector.sh
 # License       :GPLv3
@@ -53,10 +53,10 @@ if [ $# -ne 0 ];then
 else
 	echo -n "Please specify the number of samples to take-> "
 	read number_of_samples
-
 	echo -n "Please specify the sample interval (take sample every X seconds)-> "
 	read sample_interval
 
+	# Begin collecting data with sar
 	sar_collectors
 
 	total_time=$(( $sample_interval * $number_of_samples))
