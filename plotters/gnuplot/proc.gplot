@@ -14,7 +14,7 @@ reset
 
 # Terminal config
 set terminal pngcairo enhanced font 'Verdana,8'
-set output '../graphs/proc.png'
+set output '../../graphs/proc.png'
 set title "Processes"
 set key bmargin
 
@@ -36,4 +36,4 @@ set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
 set grid back ls 11
 
 # Begin plotting
-plot '../data/proc.dat' using 1:2 title 'Processes created per second' with l ls 1, \
+plot '../../data/proc.dat' using 1:2 title 'Processes created per second' with l ls 1, \

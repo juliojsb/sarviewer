@@ -13,7 +13,7 @@
 reset
 
 set terminal pngcairo enhanced font 'Verdana,8'
-set output '../graphs/loadaverage.png'
+set output '../../graphs/loadaverage.png'
 set title "System load average graph"
 set key bmargin
 
@@ -37,6 +37,6 @@ set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
 set grid back ls 11
 
 # Begin plotting
-plot '../data/loadaverage.dat' using 1:4 title '1 min' with l ls 1, \
-     ''                using 1:5 title '5 min' with l ls 2, \
-     ''                using 1:6 title '15 min' with l ls 3
+plot '../../data/loadaverage.dat' using 1:4 title '1 min' with l ls 1, \
+     ''                           using 1:5 title '5 min' with l ls 2, \
+     ''                           using 1:6 title '15 min' with l ls 3

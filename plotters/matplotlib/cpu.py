@@ -37,7 +37,7 @@ idle_cpu = []
 # ======================
 
 def generate_graph():
-    with open('../data/cpu.dat', 'r') as csvfile:
+    with open('../../data/cpu.dat', 'r') as csvfile:
         data_source = csv.reader(csvfile, delimiter=' ', skipinitialspace=True)
         for row in data_source:
             # [0] column is a time column
@@ -63,7 +63,7 @@ def generate_graph():
     plt.autoscale(True)
     
     # Graph saved to PNG file
-    plt.savefig('../graphs/cpu.png', bbox_inches='tight')
+    plt.savefig('../../graphs/cpu.png', bbox_inches='tight')
     #plt.show()
 
 # ======================

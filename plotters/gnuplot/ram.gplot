@@ -14,7 +14,7 @@ reset
 
 # Terminal config
 set terminal pngcairo enhanced font 'Verdana,8'
-set output '../graphs/ram.png'
+set output '../../graphs/ram.png'
 set title "RAM usage graph"
 set key bmargin
 
@@ -39,11 +39,9 @@ set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
 set grid back ls 11
 
 # Begin plotting
-#plot "../data/ram.dat" using 1:4 title "Used%" with l ls 1
-
 # Real free RAM = Free + cached + buffers
 # Real used RAM = Used - cached - buffers - free
-plot '../data/ram.dat' using 1:($2/1024+$5/1024+$6/1024) title 'Free' with l ls 1, \
-     ''                using 1:($5/1024) title 'Buffers' with l ls 2, \
-     ''                using 1:($6/1024) title 'Cached' with l ls 3, \
-     ''                using 1:($3/1024-$5/1024-$6/1024) title 'Used' with l ls 4
+plot '../../data/ram.dat' using 1:($2/1024+$5/1024+$6/1024) title 'Free' with l ls 1, \
+     ''                   using 1:($5/1024) title 'Buffers' with l ls 2, \
+     ''                   using 1:($6/1024) title 'Cached' with l ls 3, \
+     ''                   using 1:($3/1024-$5/1024-$6/1024) title 'Used' with l ls 4

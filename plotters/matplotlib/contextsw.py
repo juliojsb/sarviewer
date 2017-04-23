@@ -35,7 +35,7 @@ contextsw_per_second = []
 # ======================
 
 def generate_graph():
-    with open('../data/proc.dat', 'r') as csvfile:
+    with open('../../data/proc.dat', 'r') as csvfile:
         data_source = csv.reader(csvfile, delimiter=' ', skipinitialspace=True)
         for row in data_source:
             # [0] column is a time column
@@ -57,7 +57,7 @@ def generate_graph():
     plt.autoscale(True)
     
     # Graph saved to PNG file
-    plt.savefig('../graphs/contextsw.png', bbox_inches='tight')
+    plt.savefig('../../graphs/contextsw.png', bbox_inches='tight')
     #plt.show()
 
 # ======================

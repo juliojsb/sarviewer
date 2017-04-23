@@ -14,7 +14,7 @@ reset
 
 # Terminal config
 set terminal pngcairo enhanced font 'Verdana,8'
-set output '../graphs/iotransfer.png'
+set output '../../graphs/iotransfer.png'
 set title "IO Transfer"
 set key bmargin
 
@@ -37,5 +37,5 @@ set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
 set grid back ls 11
 
 # Begin plotting
-plot '../data/iotransfer.dat' using 1:5 title 'Blocks read per second' with l ls 1, \
-     ''                       using 1:6 title 'Blocks written per second' with l ls 2, \
+plot '../../data/iotransfer.dat' using 1:5 title 'Blocks read per second' with l ls 1, \
+     ''                          using 1:6 title 'Blocks written per second' with l ls 2, \
