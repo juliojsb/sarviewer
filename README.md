@@ -48,7 +48,7 @@ You will also need to manually launch script plotter.sh to generate the graphs.
 
 ```
 [jota@myserver sarviewer]$ ./system_data_reader.sh 
-Number of sa* files available at this time to retrieve data from:
+List of sa* files available at this moment to retrieve data from:
 
 -------------------------------------------
 File sa15 with data from Linux 3.16.0-4-amd64 (myserver) 	04/15/17 	_x86_64_	(8 CPU)
@@ -63,7 +63,7 @@ File sa23 with data from Linux 3.16.0-4-amd64 (myserver) 	04/23/17 	_x86_64_	(8 
 -------------------------------------------
 
 Note that the number that follows the "sa" file specifies the day of the data collected by sar daemon
-Please select an sa* file from the listed above: sa15
+Please select a sa* file from the listed above: sa15
 ```
 
 ## GNUPLOT samples
