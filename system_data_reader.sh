@@ -42,6 +42,15 @@ dump_sar_info(){
 	sar -w -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
 }
 
+check_sa_file(){
+	if [ ! -f "$sysstat_logdir/$sa_file" ];then
+		echo ""
+		echo "ERROR: The file ${sysstat_logdir}/${sa_file} does not exist"
+		echo "Please select a valid \"sa\" file from the list"
+		exit 1
+	fi
+}
+
 how_to_use(){
 	echo "This script works without parameters. Just give execution permissions and launch with -> ./system_data_reader.sh"
 }
@@ -64,6 +73,9 @@ else
 	echo "Note that the number that follows the \"sa\" file specifies the day of the data collected by sar daemon"
 	echo -n "Please select an sa* file from the listed above: "
 	read sa_file
+
+	# Check if the selected sa_file exists
+	check_sa_file
 
 	# Dump data contained in selected sar file
 	dump_sar_info
