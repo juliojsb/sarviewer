@@ -62,7 +62,7 @@ how_to_use(){
 if [ $# -ne 0 ];then
 	how_to_use
 else
-	echo "Number of sa* files available at this time to retrieve data from:"
+	echo "List of sa* files available at this moment to retrieve data from:"
 	echo ""
 	echo "-------------------------------------------"
 	for file in $(ls /var/log/sysstat | grep -v sar);do
@@ -71,7 +71,7 @@ else
 	echo "-------------------------------------------"
 	echo ""
 	echo "Note that the number that follows the \"sa\" file specifies the day of the data collected by sar daemon"
-	echo -n "Please select an sa* file from the listed above: "
+	echo -n "Please select a sa* file from the listed above: "
 	read sa_file
 
 	# Check if the selected sa_file exists
