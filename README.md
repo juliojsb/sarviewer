@@ -4,6 +4,16 @@ This repository is intended to give a simple way to measure resources usage (CPU
 
 Useful to visualize and analyze data during stress tests.
 
+The following graphs based on sar data are generated:
+
+* CPU usage
+* Load average
+* RAM usage
+* I/O transfer
+* Processes created per second
+* Swap usage
+* Context switches
+
 ## Requirements
 
 * Install **sysstat** and **gnuplot** in your system using your package manager:
