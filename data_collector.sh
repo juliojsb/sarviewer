@@ -32,7 +32,7 @@ sar_collectors(){
 	sar -r $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
 	sar -S $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/swap.dat &
-	# Load average
+	# Load average and tasks
 	sar -q $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/loadaverage.dat &
 	# IO transfer
 	sar -b $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &

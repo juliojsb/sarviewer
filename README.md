@@ -13,6 +13,7 @@ The following graphs based on sar data are generated:
 * Processes created per second
 * Swap usage
 * Context switches
+* Tasks (run queue, active, blocked)
 
 ## Requirements
 

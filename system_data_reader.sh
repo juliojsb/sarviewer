@@ -34,7 +34,7 @@ dump_sar_info(){
 	sar -r -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
 	sar -S -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/swap.dat &
-	# Load average
+	# Load average and tasks
 	sar -q -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/loadaverage.dat &
 	# IO transfer
 	sar -b -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &

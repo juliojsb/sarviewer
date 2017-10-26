@@ -20,6 +20,7 @@ if [ $# -ne 0 ];then
 elif [ "$GRAPH_GENERATOR" == "gnuplot" ];then
 	cd plotters/gnuplot
 	gnuplot loadaverage.gplot
+	gnuplot tasks.gplot
 	gnuplot cpu.gplot
 	gnuplot ram.gplot
 	gnuplot swap.gplot
@@ -29,6 +30,7 @@ elif [ "$GRAPH_GENERATOR" == "gnuplot" ];then
 elif [ "$GRAPH_GENERATOR" == "matplotlib" ];then
 	cd plotters/matplotlib
 	python loadaverage.py
+	python tasks.py
 	python cpu.py
 	python ram.py
 	python swap.py
