@@ -20,6 +20,8 @@
 
 # To display time in 24h format
 export LC_TIME="POSIX"
+# Name of the network interface for the netinterface statistics graph
+network_interface="eth0"
 
 # ======================
 # FUNCTIONS
@@ -38,6 +40,8 @@ sar_collectors(){
 	sar -b $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &
 	# Process/context switches
 	sar -w $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
+	# Network Interface
+	sar -n DEV $sample_interval $number_of_samples | grep $network_interface | grep -v "Average" > data/netinterface.dat &
 }
 
 how_to_use(){

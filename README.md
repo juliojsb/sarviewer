@@ -14,6 +14,7 @@ The following graphs based on sar data are generated:
 * Swap usage
 * Context switches
 * Tasks (run queue, active, blocked)
+* Network interface statistics (eth0 by default)
 
 ## Requirements
 
@@ -34,6 +35,7 @@ pip install matplotlib
 
 * Clone this repo or download it (ZIP format). Note that the files contained in data/ and graphs/ folders are only for sample purposes.
 * By default the graphs are generated using gnuplot. If you want to generate them using matplotlib, change the variable **GRAPH_GENERATOR** in the script **plotter.sh** from *gnuplot* to *matplotlib*
+* Network interface statistics are generated for eth0 by default. Change the variable **network_interface** as needed in **data_collector.sh** and **system_data_reader.sh** scripts.
 * The repo can be used in two modes, depending on your needs. See below.
 
 ### Mode 1: Begin collecting data and generate graphs

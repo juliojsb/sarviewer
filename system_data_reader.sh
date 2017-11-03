@@ -21,7 +21,10 @@
 
 # To display time in 24h format
 export LC_TIME="POSIX"
+# Folder where sa* log files are located
 sysstat_logdir="/var/log/sysstat"
+# Name of the network interface for the netinterface statistics graph
+network_interface="eth0"
 
 # ======================
 # FUNCTIONS
@@ -40,6 +43,8 @@ dump_sar_info(){
 	sar -b -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &
 	# Process/context switches
 	sar -w -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
+	# Network Interface
+	sar -n DEV -f $sysstat_logdir/$sa_file | grep $network_interface | grep -v "Average" > data/netinterface.dat &
 }
 
 check_sa_file(){

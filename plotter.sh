@@ -27,6 +27,7 @@ elif [ "$GRAPH_GENERATOR" == "gnuplot" ];then
 	gnuplot iotransfer.gplot
 	gnuplot proc.gplot
 	gnuplot contextsw.gplot
+	gnuplot netinterface.gplot
 elif [ "$GRAPH_GENERATOR" == "matplotlib" ];then
 	cd plotters/matplotlib
 	python loadaverage.py
@@ -37,6 +38,7 @@ elif [ "$GRAPH_GENERATOR" == "matplotlib" ];then
 	python iotransfer.py
 	python proc.py
 	python contextsw.py
+	python netinterface.py
 else
 	echo "Variable GRAPH_GENERATOR must be \"gnuplot\" or \"matplotlib\", please check plotter.sh"
 fi
