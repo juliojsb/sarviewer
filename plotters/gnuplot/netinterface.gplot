@@ -1,0 +1,41 @@
+#!/usr/bin/gnuplot
+#
+# Script        :cpu.gplot
+# Author        :Julio Sanz
+# Website       :www.elarraydejota.com
+# Email         :juliojosesb@gmail.com
+# Description   :Script to create network interface statistics graph with gnuplot
+# Dependencies  :gnuplot
+# Usage         :gnuplot netinterface.gplot
+# License       :GPLv3
+#
+
+reset
+
+# Graph terminal and general config
+set terminal pngcairo enhanced font 'Verdana,8'
+set output '../../graphs/netinterface.png'
+set title "Network statistics"
+set key bmargin
+
+# Styles for different lines
+set style line 1 lc rgb '#009973' pt 1 ps 1 lt 1 lw 2 # line1
+set style line 2 lc rgb '#b3b300' pt 6 ps 1 lt 1 lw 2 # line2
+
+# Axis configuration
+set style line 11 lc rgb '#2c3e50' lt 1 lw 1.5 # Axis line
+set border 3 back ls 11
+set tics nomirror
+set autoscale xy
+set xdata time
+set timefmt "%H:%M:%S"
+set xlabel "Time"
+set ylabel "Kb/s"
+
+# Background grid
+set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
+set grid back ls 11
+
+# Begin plotting
+plot '../../data/netinterface.dat' using 1:5 title 'Kilobytes received per second' with l ls 1, \
+     ''                            using 1:6 title 'Kilobytes sent per second' with l ls 2, \
