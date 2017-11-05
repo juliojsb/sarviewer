@@ -1,0 +1,43 @@
+#!/usr/bin/gnuplot
+#
+# Script        :sockets.gplot
+# Author        :Julio Sanz
+# Website       :www.elarraydejota.com
+# Email         :juliojosesb@gmail.com
+# Description   :Script to create sockets statistics graph with gnuplot
+# Dependencies  :gnuplot
+# Usage         :gnuplot sockets.gplot
+# License       :GPLv3
+#
+
+reset
+
+# Graph terminal and general config
+set terminal pngcairo enhanced font 'Verdana,8'
+set output '../../graphs/sockets.png'
+set title "Sockets"
+set key bmargin
+
+# Styles for different lines
+set style line 1 lc rgb '#ff9933' pt 1 ps 1 lt 1 lw 2 # line1
+set style line 2 lc rgb '#009933' pt 6 ps 1 lt 1 lw 2 # line2
+set style line 3 lc rgb '#cc3300' pt 6 ps 1 lt 1 lw 2 # line3
+
+# Axis configuration
+set style line 11 lc rgb '#2c3e50' lt 1 lw 1.5 # Axis line
+set border 3 back ls 11
+set tics nomirror
+set autoscale xy
+set xdata time
+set timefmt "%H:%M:%S"
+set xlabel "Time"
+set ylabel "Number of sockets"
+
+# Background grid
+set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
+set grid back ls 11
+
+# Begin plotting
+plot '../../data/sockets.dat' using 1:($3+$7) title 'Total TCP sockets' with l ls 1, \
+     ''                       using 1:4 title 'Total UDP sockets' with l ls 2, \
+     ''                       using 1:7 title 'TCP sockets in TIME WAIT state' with l ls 3, \

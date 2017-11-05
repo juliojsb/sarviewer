@@ -42,6 +42,8 @@ sar_collectors(){
 	sar -w $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
 	# Network Interface
 	sar -n DEV $sample_interval $number_of_samples | grep $network_interface | grep -v "Average" > data/netinterface.dat &
+	# Sockets
+	sar -n SOCK $sample_interval $number_of_samples | grep -v -E "[a-zA-Z]|^$" > data/sockets.dat &
 }
 
 how_to_use(){

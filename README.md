@@ -15,6 +15,7 @@ The following graphs based on sar data are generated:
 * Context switches
 * Tasks (run queue, active, blocked)
 * Network interface statistics (eth0 by default)
+* TCP/UDP sockets
 
 ## Requirements
 
