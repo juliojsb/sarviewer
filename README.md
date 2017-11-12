@@ -19,7 +19,7 @@ The following graphs based on sar data are generated:
 
 ## Requirements
 
-* Install **sysstat** and **gnuplot** in your system using your package manager:
+* For basic funcionality you will need to install **sysstat** and **gnuplot** in your system using your package manager:
 ```bash
 # Debian & based
 apt-get install sysstat gnuplot
@@ -30,6 +30,14 @@ yum install sysstat gnuplot
 * If you want to generate the graphs using **matplotlib** (in **Python 2.7**) you can install it with **pip**. In case you don't have pip [check the official guide](https://pip.pypa.io/en/stable/installing/#using-linux-package-managers) to install it using your chosen package manager. Once you have pip just:
 ```bash
 pip install matplotlib
+```
+
+* If you are going to use the mail option (to send the graphs via email) you will need **mutt**:
+```bash
+# Debian & based
+apt-get install mutt
+# RHEL & based
+yum install mutt
 ```
 
 ## Usage
@@ -78,6 +86,32 @@ File sa23 with data from Linux 3.16.0-4-amd64 (myserver) 	04/23/17 	_x86_64_	(8 
 
 Note that the number that follows the "sa" file specifies the day of the data collected by sar daemon
 Please select a sa* file from the listed above: sa15
+```
+
+* You can also use parameters with the script **system_data_reader.sh**, specifying the sa file to parse, start/ending time and an optional email address where you will receive your graphs attached. Examples:
+
+```
+# Send by email day 04 statistics
+./system_data_reader.sh -f sa04 -m example@example.com
+
+# Send by email day 04 statistics between 09:00 and 12:00
+./system_data_reader.sh -f sa04 -s 09:00 -e 12:00 -m example@example.com
+
+# Send by email day 05 statistics just since 10:00 
+./system_data_reader.sh -f sa05 -s 10:00 -m example@example.com
+
+# Just parse day 05 statistics
+./system_data_reader.sh -f sa05
+```
+
+* Parameters are also useful if you want to send statistics periodically with a **crontab**. Examples: 
+
+```
+# Send graphs statistics from present day everyday at 23:30
+30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +%d) -m example@example.com
+
+# Send graphs statistics from the day before everyday at 23:30
+30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +%d -d yesterday) -m example@example.com
 ```
 
 ## GNUPLOT samples
