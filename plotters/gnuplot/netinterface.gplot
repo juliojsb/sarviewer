@@ -38,4 +38,4 @@ set grid back ls 11
 
 # Begin plotting
 plot '../../data/netinterface.dat' using 1:5 title 'Kilobytes received per second' with l ls 1, \
-     ''                            using 1:6 title 'Kilobytes sent per second' with l ls 2, \
+     ''                            using 1:6 title 'Kilobytes sent per second' with l ls 2
