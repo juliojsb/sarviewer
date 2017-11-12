@@ -11,13 +11,12 @@
 # License       :GPLv3
 #
 
-# This variable can be "gnuplot" or "matplotlib" (Python) depending on how you want to generate the graphs
-# By default, gnuplot
-GRAPH_GENERATOR="gnuplot"
+# Read sarviewer.properties file
+. sarviewer.properties
 
 if [ $# -ne 0 ];then
 	echo "This script doesn't accept parameters"
-elif [ "$GRAPH_GENERATOR" == "gnuplot" ];then
+elif [ "$graph_generator" == "gnuplot" ];then
 	cd plotters/gnuplot
 	gnuplot loadaverage.gplot
 	gnuplot tasks.gplot
@@ -29,7 +28,7 @@ elif [ "$GRAPH_GENERATOR" == "gnuplot" ];then
 	gnuplot contextsw.gplot
 	gnuplot netinterface.gplot
 	gnuplot sockets.gplot
-elif [ "$GRAPH_GENERATOR" == "matplotlib" ];then
+elif [ "$graph_generator" == "matplotlib" ];then
 	cd plotters/matplotlib
 	python loadaverage.py
 	python tasks.py
@@ -42,5 +41,5 @@ elif [ "$GRAPH_GENERATOR" == "matplotlib" ];then
 	python netinterface.py
 	python sockets.py
 else
-	echo "Variable GRAPH_GENERATOR must be \"gnuplot\" or \"matplotlib\", please check plotter.sh"
+	echo "Variable graph_generator must be \"gnuplot\" or \"matplotlib\", please check sarviewer.properties"
 fi

@@ -19,12 +19,8 @@
 # VARIABLES
 # ======================
 
-# To display time in 24h format
-export LC_TIME="POSIX"
-# Folder where sa* log files are located
-sysstat_logdir="/var/log/sysstat"
-# Name of the network interface for the netinterface statistics graph
-network_interface="eth0"
+# Read sarviewer.properties file
+. sarviewer.properties
 
 # ======================
 # FUNCTIONS
