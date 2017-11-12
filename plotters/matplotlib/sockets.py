@@ -29,7 +29,8 @@ plt.gcf().autofmt_xdate()
 x = []
 # Data arrays
 t_tcp = []
-t_udp = []
+t_tcp_use = []
+t_udp_use = []
 t_tcp_time_wait = []
 
 # ======================
@@ -46,12 +47,14 @@ def generate_graph():
             x.append((a))
             # The remaining columns contain data
             t_tcp.append(str((int(row[2]))+(int(row[6]))))
-            t_udp.append(row[3])
+            t_tcp_use.append(row[2])
+            t_udp_use.append(row[3])
             t_tcp_time_wait.append(row[6])
     
     # Plot lines
     plt.plot(x,t_tcp, label='Total TCP sockets', color='#ff9933', antialiased=True)
-    plt.plot(x,t_udp, label='Total UDP sockets', color='#009933', antialiased=True)
+    plt.plot(x,t_tcp_use, label='TCP sockets in use', color='#66ccff', antialiased=True)
+    plt.plot(x,t_udp_use, label='UDP sockets in use', color='#009933', antialiased=True)
     plt.plot(x,t_tcp_time_wait, label='TCP sockets in TIME WAIT state', color='#cc3300', antialiased=True)
     
     # Graph properties
