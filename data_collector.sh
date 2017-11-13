@@ -14,6 +14,9 @@
 # License       :GPLv3
 #
 
+# Initialize in sarviewer folder
+cd $(dirname $0)
+
 # ======================
 # VARIABLES
 # ======================
