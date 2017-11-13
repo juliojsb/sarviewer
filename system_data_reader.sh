@@ -155,18 +155,18 @@ elif [ "$#" -ne 0 ];then
 				exit 1
 				;;
 		esac
-		# Check if the selected sa_file exists
-		check_sa_file
-
-		# Dump data contained in selected sar file
-		dump_sar_info
-
-		# Call plotter.sh to generate the graphs
-		./plotter.sh
-
-		# Send mail if specified
-		if [[ $mail_to ]];then
-			echo "SARVIEWER - sysstat ${sa_file} statistics for $(hostname)" | mutt -a graphs/*.png -s "SARVIEWER - sysstat ${sa_file} statistics for $(hostname)" -- $mail_to
-		fi
 	done
+	# Check if the selected sa_file exists
+	check_sa_file
+
+	# Dump data contained in selected sar file
+	dump_sar_info
+
+	# Call plotter.sh to generate the graphs
+	./plotter.sh
+
+	# Send mail if specified
+	if [[ $mail_to ]];then
+		echo "SARVIEWER - sysstat ${sa_file} statistics for $(hostname)" | mutt -a graphs/*.png -s "SARVIEWER - sysstat ${sa_file} statistics for $(hostname)" -- $mail_to
+	fi
 fi
