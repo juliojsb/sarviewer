@@ -108,10 +108,10 @@ Please select a sa* file from the listed above: sa15
 
 ```
 # Send graphs statistics from present day everyday at 23:30
-30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +%d) -m example@example.com
+30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +\%d) -m example@example.com
 
 # Send graphs statistics from the day before everyday at 23:30
-30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +%d -d yesterday) -m example@example.com
+30 23 * * * /home/jota/scripts/sarviewer/system_data_reader.sh -f sa$(date +\%d -d yesterday) -m example@example.com
 ```
 
 ## GNUPLOT samples
