@@ -54,15 +54,28 @@ yum install mutt
 ```
 [jota@myserver sarviewer]$ ./data_collector.sh 
 Please specify the number of samples to take-> 10
-Please specify the sample interval (take sample every X seconds)-> 5
-Total time to collect data -> 50 seconds
->>>Collecting data...
->>>Please wait until data collection is completed...
-You can abort this script with Ctrl+C, but have in mind the data will stop being collected when you cancel it.
-You will also need to manually launch script plotter.sh to generate the graphs.
+Please specify the sample interval (take sample every X seconds)-> 2
+Taking 10 samples with 2 seconds interval
+Total time to collect all data: 20 seconds
+----------------------------------
+>>> Collecting data
+>>> Please wait until data collection is completed
+----------------------------------
+- You can abort this script with Ctrl+C, but have in mind the data will stop being collected when you cancel it.
+- You will also need to manually launch script plotter.sh to generate the graphs.
 ```
 
 * Once the script has finished the data collection or you have cancelled it (and subsequently launched plotter.sh) you can analyze the resource usage in the graphs (PNG format) that have been generated in the **graphs/** folder of this repo.
+
+* You can also use parameters with the script, for example:
+
+```
+# Generate 10 samples with 1 second interval between each one
+./data_collector.sh -n 10 -i 1
+
+# Generate 10 samples with 1 second interval between each one and send results to mail
+./data_collector.sh -n 10 -i 1 -m example@example.com
+```
 
 ### Mode 2: Read data from sar daemon and generate graphs
 
