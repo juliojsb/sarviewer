@@ -60,7 +60,7 @@ list_sa_files(){
 	echo ""
 	echo "-------------------------------------------"
 	for file in $(ls ${sysstat_logdir} | grep -v sar);do
-		echo "File $file with data from $(sar -r -f /var/log/sysstat/$file | head -1 )";
+		echo "File ${file} with data from $(sar -r -f ${sysstat_logdir}/${file} | head -1 )";
 	done
 	echo "-------------------------------------------"
 	echo ""
