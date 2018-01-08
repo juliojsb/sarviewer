@@ -9,6 +9,8 @@ Usage         :python tasks.py
 License       :GPLv3
 """
 
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 import csv
 from datetime import datetime
