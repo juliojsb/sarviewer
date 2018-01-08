@@ -3,9 +3,9 @@
 Author        :Julio Sanz
 Website       :www.elarraydejota.com
 Email         :juliojosesb@gmail.com
-Description   :Generate CPU graph from cpu.dat file
+Description   :Generate net interface graph from netinterface.dat file
 Dependencies  :Python 2.x, matplotlib
-Usage         :python cpu.py
+Usage         :python netinterface.py
 License       :GPLv3
 """
 

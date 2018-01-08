@@ -3,7 +3,7 @@
 Author        :Julio Sanz
 Website       :www.elarraydejota.com
 Email         :juliojosesb@gmail.com
-Description   :Generate Load Average graph from sockets.dat file
+Description   :Generate sockets graph from sockets.dat file
 Dependencies  :Python 2.x, matplotlib
 Usage         :python sockets.py
 License       :GPLv3
