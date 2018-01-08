@@ -29,7 +29,7 @@ cd $(dirname $0)
 
 dump_sar_info(){
 	# CPU
-	sar -u -f $sysstat_logdir/$sa_file -s $start_time -e $end_time | grep -v -E "CPU|Average|^$" > data/cpu.dat &
+	sar -u -f $sysstat_logdir/$sa_file -s $start_time -e $end_time | grep -v -E "CPU|Average|RESTART|^$" > data/cpu.dat &
 	# RAM
 	sar -r -f $sysstat_logdir/$sa_file -s $start_time -e $end_time | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
