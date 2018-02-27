@@ -42,4 +42,4 @@ set grid back ls 11
 plot '../../data/sockets.dat' using 1:($3+$7) title 'Total TCP sockets' with l ls 1, \
      ''                       using 1:3 title 'TCP sockets in use' with l ls 2, \
      ''                       using 1:4 title 'UDP sockets in use' with l ls 3, \
-     ''                       using 1:7 title 'TCP sockets in TIME WAIT state' with l ls 4, \
+     ''                       using 1:7 title 'TCP sockets in TIME WAIT state' with l ls 4

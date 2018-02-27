@@ -38,4 +38,4 @@ set grid back ls 11
 
 # Begin plotting
 plot '../../data/iotransfer.dat' using 1:5 title 'Blocks read per second' with l ls 1, \
-     ''                          using 1:6 title 'Blocks written per second' with l ls 2, \
+     ''                          using 1:6 title 'Blocks written per second' with l ls 2
