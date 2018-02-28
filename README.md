@@ -19,15 +19,30 @@ The following graphs based on sar data are generated:
 
 ## Requirements
 
-* For basic funcionality you will need to install **sysstat** and **gnuplot** in your system using your package manager:
+For basic functionality you will need to install **sysstat** and **gnuplot** in your system using your package manager:
 ```bash
 # Debian & based
 apt-get install sysstat gnuplot
 # RHEL & based
 yum install sysstat gnuplot
 ```
+
+Minimum version required:
+
+* gnuplot 4.4+
+* sysstat 10.1.5+
+
+You can check your current version with:
+```bash
+# Gnuplot
+gnuplot --version
+# Sysstat
+sar -V
+```
+
+If your current distribution (for example, CentOS 6) doesn't have these versions in repositories by default, you will have to either install the needed package or build from sources.
         
-* If you want to generate the graphs using **matplotlib** (in **Python 2.7**) you can install it with **pip**. In case you don't have pip [check the official guide](https://pip.pypa.io/en/stable/installing/#using-linux-package-managers) to install it using your chosen package manager. Once you have pip just:
+If you want to generate the graphs using **matplotlib** (in **Python 2.7**) you can install it with **pip**. In case you don't have pip [check the official guide](https://pip.pypa.io/en/stable/installing/#using-linux-package-managers) to install it using your chosen package manager. Once you have pip just:
 ```bash
 pip install matplotlib
 ```
