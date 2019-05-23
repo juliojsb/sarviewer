@@ -29,6 +29,7 @@ set tics nomirror
 set autoscale xy
 set xdata time
 set timefmt "%H:%M:%S"
+set format x "%H:%M"
 set xlabel "Time"
 set ylabel "Load average"
 
