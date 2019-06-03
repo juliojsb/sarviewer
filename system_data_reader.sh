@@ -44,6 +44,8 @@ dump_sar_info(){
 	sar -n DEV -f $sysstat_logdir/$sa_file -s $start_time -e $end_time | grep $network_interface | grep -v "Average" > data/netinterface.dat &
 	# Sockets
 	sar -n SOCK -f $sysstat_logdir/$sa_file -s $start_time -e $end_time | grep -v -E "[a-zA-Z]|^$" > data/sockets.dat &
+
+    wait
 }
 
 check_sa_file(){
